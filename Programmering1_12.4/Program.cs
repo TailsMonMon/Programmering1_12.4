@@ -17,14 +17,14 @@ namespace Programmering1_12._3 {
                 ConsoleKeyInfo menuChoice = Console.ReadKey(true);
 
                 if(menuChoice.Key == ConsoleKey.L) {
-                        Console.Write("Ange temperatur: ");
-                        temperatures.Add(Convert.ToDouble(Console.ReadLine()));
+                    Console.Write("Ange temperatur: ");
+                    temperatures.Add(Convert.ToDouble(Console.ReadLine()));
+                    // Skipped for time:  Exception handling
                 }
                 else if(menuChoice.Key == ConsoleKey.S) {
                     Console.Write("Följande temperaturer har angets: ");
-                    foreach(double element in temperatures) {
-                        Console.Write(element + ", ");
-                    }
+                    Console.Write(string.Join(", ", temperatures.Cast<double>().ToArray()));
+
                     double sum = 0;
                     double midValue = 0;
                     foreach(double element in temperatures) {
@@ -36,6 +36,7 @@ namespace Programmering1_12._3 {
                 else if(menuChoice.Key == ConsoleKey.T) {
                     Console.Write("Ange index att ta bort: ");
                     temperatures.RemoveAt(Convert.ToInt32(Console.ReadLine()));
+                    // Skipped for time:  Exception handling
                 }
                 else if(menuChoice.Key == ConsoleKey.A) {
                     Console.WriteLine("Tack för denna gången!");
